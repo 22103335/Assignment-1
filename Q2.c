@@ -1,13 +1,20 @@
 #include <stdio.h>
-int main() {
-  int n, sum = 0;
-  printf("Enter the number of elements ");
-  scanf("%d", &n);
-  int arr[n];
-  printf("Enter the elements\n");
-  for (int i = 0; i < n; i++)
-    scanf("%d", &arr[i]);
-  for (int i = 0; i < n; i++)
-    sum += arr[i];
-  printf("Average of elements is %f", (float)sum / n);
+void main() {
+    int m; 
+    printf("Enter the number of rows ");
+    scanf("%d", &m);
+    int a[m][m];
+    for (int i = 0; i < m; i++)
+        for (int j = 0; j < m; j++) {
+            printf("Enter the element ");
+            scanf("%d", &a[i][j]);
+        }
+    for (int i = 0; i < m; i++)
+        for (int j = i + 1; j < m; j++)
+            (a[i][j] += a[j][i]), (a[j][i] = a[i][j] - a[j][i]), (a[i][j] -= a[j][i]);
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < m; j++)
+            printf("%d ", a[i][j]);
+            printf("\n");
+    }
 }
