@@ -6,6 +6,6 @@ void main() {
     int a[n];
     float s = 0;
     for (int i = 0; i < n; i++)
-        s += i;
+        s += a[i];
     printf("The average is %d", s / n);
 }
